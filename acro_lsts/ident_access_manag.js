@@ -21,7 +21,7 @@
     },
     {
       "acronym": "FACL",
-      "definition": "File System Access Control List",
+      "definition": "File Access Control List",
       "purpose": "Defines permissions for files and directories at the OS level."
     },
     {

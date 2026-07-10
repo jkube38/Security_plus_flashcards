@@ -135,11 +135,6 @@ export default `[
       "purpose": "Security model requiring continuous verification of all users and devices."
     },
     {
-      "acronym": "IOC",
-      "definition": "Indicator of Compromise",
-      "purpose": "Evidence that suggests malicious activity has occurred."
-    },
-    {
       "acronym": "IR",
       "definition": "Incident Response",
       "purpose": "Structured approach to handling and mitigating security incidents."
@@ -153,10 +148,5 @@ export default `[
       "acronym": "DGA",
       "definition": "Domain Generation Algorithm",
       "purpose": "Used by malware to generate many domain names to evade blocking."
-    },
-    {
-      "acronym": "IOC",
-      "definition": "Indicator of Compromise",
-      "purpose": "Evidence pointing to a security breach or malicious activity."
     }
   ]`

@@ -7,8 +7,50 @@
     <link rel="stylesheet" href="sec_flshcrds.css">
 </head>
 <body>
-    <h1 id="title1">Hello Cybersecurity</h1>
-
+    <div id="head">
+        <img id="hLogo1" src="./hacker_logo.png" alt="a logo of a hacker in a hoodie inside an octagon with lines coming from the bottom and right side">
+        <h1 id="title1">CompTIA Security+ SYO-701 Acronym Flashcards</h1>
+    </div>
+    <div id="mainContentHolder">
+        <div id="sidebar">
+            <h4 id="topicHead">TOPICS</h4>
+            <div id="topicSelection">
+                <h3 id="General Concepts" class="topic">General Concepts</h3>
+                <h3 class="divider">|</h3>
+                <h3 id="Cryptography & PKI" class="topic">Cryptography & PKI</h3>
+                <h3 class="divider">|</h3>
+                <h3 id="Identity & Access Management" class="topic">Identity & Access Management</h3>
+                <h3 class="divider">|</h3>
+                <h3 id="Networking & Infrastructure" class="topic">Networking & Infrastructure</h3>
+                <h3 class="divider">|</h3>
+                <h3 id="Threats Attacks & Malware" class="topic">Threats Attacks & Malware</h3>
+                <h3 class="divider">|</h3>
+                <h3 id="Wireless & Mobile" class="topic">Wireless & Mobile</h3>
+                <h3 class="divider">|</h3>
+                <h3 id="Cloud & Virtualization" class="topic">Cloud & Virtualization</h3>
+                <h3 class="divider">|</h3>
+                <h3 id="Miscellaneous" class="topic">Miscellaneous</h3>
+            </div>
+        </div>
+        <div id="displayArea">
+            <div id="selectedTopic"></div>
+            <div id="flashCard"></div>
+            <div id="options">
+                    <h3 id="show">SHOW ANSWER</h3>
+                    <h3 id="next">NEXT CARD</h3>
+            </div>
+            <label for="acronymAttempt" id="acronymAttemptLabel">Build some muscle memory and type out your answers</label>
+            <input type='text' id="acronymAttempt" name="acronymAttempt" cols="100" placeholder="Acronym"></input>
+            <label for="acronymAttemptFull" id="acronymAttemptFullLabel"></label>
+            <input type='text' id="acronymAttemptFull" name="acronymAttemptFull" size="70" placeholder="Full-name"></input>
+            <label for="purposeAttempt"></label>
+            <textarea id="purposeAttempt" name="purposeAttempt" rows="3" cols="69" placeholder="purpose"></textarea> 
+        </div>
+    </div>
+    <div id="footer">
+         <img id="hLogo2" src="./hacker_logo2.png" alt="a logo of a hacker in a hoodie inside an octagon">
+         <p id="copyright">&copy; 2026 Jordan Kubista. All rights reservered.</p>
+    </div>
     <!-- Imports the the js script -->
     <script type='module' src="sec_flshcrds.js"></script>
 </body>
