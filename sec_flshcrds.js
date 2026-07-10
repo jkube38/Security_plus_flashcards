@@ -106,10 +106,49 @@ function showTopic(selection) {
     topicTtleHldr.appendChild(tTitle)
 }
 
+// using global variable to save data for scoring and gathering their
+// elements to update the page
+
+let attempts = 0
+let crctAttempt = 0
+
+// listens for the changes in the full name field for score accuracy
+const fullAttempAnswr = document.querySelector('#acronymAttemptFull')
+let userAnswer
+fullAttempAnswr.addEventListener('input', function(event) {
+    userAnswer = fullAttempAnswr.value
+})
+
+// updates the scores on the page
+function updateScores(crctAnswer) {
+    let crctDef = crctAnswer[0]
+    let acronym = crctAnswer[1]
+    let scrHolder = document.getElementById('score')
+    let dtlsHolder = document.getElementById('detailsContainer')
+    let scoreOutcomeC = document.createElement('h3')
+    let scoreOutcomeW = document.createElement('h3')
+    scoreOutcomeC.className = 'scoreOutcomeC'
+    scoreOutcomeW.className = 'scoreOutcomeW'
+    let scrdtls
+    userAnswer = userAnswer.toLowerCase()
+    crctDef = crctDef.toLowerCase()
+    if (userAnswer === crctDef) {
+        crctAttempt++
+        scrdtls = `\u2714 - ${acronym} - Your Answer--> ${userAnswer}`
+        scoreOutcomeC.textContent = scrdtls
+        dtlsHolder.appendChild(scoreOutcomeC)
+    } else {
+        scrdtls = `\u2718 - ${acronym} - Your Answer--> ${userAnswer}\nCorrect Answer--> ${crctDef}`
+        scoreOutcomeW.textContent = scrdtls
+        dtlsHolder.appendChild(scoreOutcomeW)
+    }
+    scrHolder.innerHTML = `${crctAttempt} / ${attempts}`
+}
+
 // displays correct cards and sets functionality to them
 async function displayCards (cardTopic, selection) {
 
-    const display = document.getElementById('displayArea')
+    const gameContainer = document.getElementById('flashCardGameContainer')
     const card = document.getElementById("flashCard")
     const topicTtleHldr = document.getElementById('selectedTopic')
     topicTtleHldr.innerHTML = ''
@@ -127,8 +166,9 @@ async function displayCards (cardTopic, selection) {
     const options = document.getElementById("options")
     let shwAnsr = document.getElementById("show")    
 
-    for (const a of cardTopic) {        
-        display.style.visibility = 'visible'
+    for (const a of cardTopic) {
+        let crctAnswer = [a['definition'], a['acronym']]
+        gameContainer.style.visibility = 'visible'
         selectTopicText.style.visibility = 'hidden'
         currentCard++
         crdNumHolder.innerHTML = `${currentCard} / ${ttlCards}`
@@ -147,16 +187,20 @@ async function displayCards (cardTopic, selection) {
         acronym.className = "acronyms"
         acronym.textContent = a["acronym"]
         card.appendChild(acronym)
-
+        console.log(userAnswer)
         shwAnsr.onclick = () => {
             showAnswer(answer, purpose)
             shwAnsr.style.color = 'gray'
             shwAnsr.onclick = null
+            attempts++
+            updateScores(crctAnswer)
+            userAnswer = ''
         }
-
+        
         await waitForNext()
+
     }
-    display.style.visibility = 'hidden'
+    gameContainer.style.visibility = 'hidden'
     selectTopicText.style.visibility = 'visible'
 }
 

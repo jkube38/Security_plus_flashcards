@@ -6,10 +6,10 @@
     <title>Cybersecurity Acryonyms</title>
     <link rel="stylesheet" href="sec_flshcrds.css">
     <link rel="icon" type="image/x-icon" href="./images/hacker_logo_icon.png">
-    <script>
+    <!-- <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script> -->
 </head>
 <body>
     <div id="head">
@@ -38,21 +38,51 @@
             </div>
         </div>
         <div id="displayArea">
-            <div id="selectedTopic"></div>
-            <div id="flashCard"></div>
-            <div id="options">
-                    <h2 id="show">show answer</h2>
-                    <h2 id="current"></h2>
-                    <h2 id="next">next card</h2>
+            <div id="flashCardGameContainer">
+                <div id="selectedTopic"></div>
+                <div id="flashCard"></div>
+                <div id="options">
+                        <h2 id="show">show answer</h2>
+                        <h2 id="current"></h2>
+                        <h2 id="next">next card</h2>
+                </div>
+                <label for="acronymAttempt" id="acronymAttemptLabel">Build some muscle memory and type out your answers</label>
+                <input type='text' id="acronymAttempt" name="acronymAttempt" cols="100" placeholder="Acronym"></input>
+                <label for="acronymAttemptFull" id="acronymAttemptFullLabel"></label>
+                <input type='text' id="acronymAttemptFull" name="acronymAttemptFull" size="70" placeholder="Full-name"></input>
+                <label for="purposeAttempt"></label>
+                <textarea id="purposeAttempt" name="purposeAttempt" rows="3" cols="69" placeholder="purpose"></textarea> 
+                <div id="selectTopic">
+                    <h2 id='selectTopicText'>select a topic to continue</h2>
+                </div>
             </div>
-            <label for="acronymAttempt" id="acronymAttemptLabel">Build some muscle memory and type out your answers</label>
-            <input type='text' id="acronymAttempt" name="acronymAttempt" cols="100" placeholder="Acronym"></input>
-            <label for="acronymAttemptFull" id="acronymAttemptFullLabel"></label>
-            <input type='text' id="acronymAttemptFull" name="acronymAttemptFull" size="70" placeholder="Full-name"></input>
-            <label for="purposeAttempt"></label>
-            <textarea id="purposeAttempt" name="purposeAttempt" rows="3" cols="69" placeholder="purpose"></textarea> 
-            <div id="selectTopic">
-                <h2 id='selectTopicText'>select a topic to continue</h2>
+            <div id="scoringContainer">
+                <div id="explanationContainer">
+                    <h2 id="explanation">scoring is based on full-name attempts</h2>
+                </div>
+                <div id="scoreDetailsContainer">
+                    <div id="totalScore">
+                        <div id="ttlScoreHeader">
+                            <h2 id="ttlScoreTitle">total score</h2>
+                        </div>
+                        <div id="scoreContainer">
+                            <div id="scoreHolder">
+                                <h2 id="score"> 0 / 0</h2>
+                                <h2 id="rule">* score is calculated once the 'show answer' button is clicked, correct spelling and appropriate pucntuation is required for a correct score (do not worry about capitalization)</h2>    
+                            </div>
+                        </div>
+                    </div>
+                    <div id="scoreDetails">
+                        <div id="scoreDetailsHeader">
+                            <h2 id="scrDetailsTitle">score details</h2>
+                        </div>
+                        <div id="detailsHolder">
+                            <div id="detailsContainerHolder">
+                                <div id="detailsContainer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

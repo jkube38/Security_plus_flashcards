@@ -23,7 +23,15 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: black;
+    /* visibility: hidden; */
+}
+
+#flashCardGameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     visibility: hidden;
+    width: 100%;
 }
 
 #title1 {
@@ -187,3 +195,155 @@ body {
     font-family: "Share Tech", sans-serif;
     color: white;
 }
+
+
+/* styling for the scoring container */
+#scoringContainer {
+    width: 100%;
+}
+
+#explanationContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+}
+
+#explanation {
+    font-family: "Share Tech", sans-serif;
+    color: white;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#scoreDetailsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#totalScore {
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-bottom: 10vh;    
+}
+
+#scoreDetails {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50vh;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-bottom: 10vh;
+    
+}
+
+#scoreDetailsHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid white;
+}
+
+#ttlScoreHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    width: 100%;
+}
+
+#scrDetailsTitle {
+    font-family: "Share Tech", sans-serif;
+    color: white;
+    margin: 5px 0 5px 0;
+}
+
+#ttlScoreTitle {
+    font-family: "Share Tech", sans-serif;
+    color: white;
+    margin: 5px 0 5px 0;
+}
+
+#score {
+    font-family: "Share Tech", sans-serif;
+    color: white;
+    font-size: 3em;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#rule {
+    font-family: "Share Tech", sans-serif;
+    color: white;
+    font-size: .75em;
+    text-align: center;
+}
+
+#scoreContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#scoreHolder {
+    width: 50%;
+    text-align: center;
+}
+
+.scoreOutcomeC {
+    font-family: "Share Tech", sans-serif;
+    color: rgb(38, 248, 0);
+    font-size: 1em;
+}
+
+.scoreOutcomeW {
+    font-family: "Share Tech", sans-serif;
+    color: rgb(252, 206, 0);
+    font: 1em;
+}
+
+#detailsHolder {
+    width: 100%;
+    height: 100%;
+}
+
+#detailsContainerHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.custom-scrollbar {
+    --scrollbar-track-color: black;
+}
+
+#detailsContainer {
+    width: 50%;
+    height: 75%;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: var(--scrollbar-track-color);
+    }
+    white-space: pre-line;
+}
+
+
+
