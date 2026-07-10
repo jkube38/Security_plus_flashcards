@@ -115,14 +115,23 @@ async function displayCards (cardTopic, selection) {
     topicTtleHldr.innerHTML = ''
     showTopic(selection)
 
+    let currentCard = 0
+    let ttlCards = cardTopic.length
+    const crdNumHolder = document.getElementById('current')
+    
     const acroAttempt = document.getElementById('acronymAttempt')
     const acroAttemptFull = document.getElementById('acronymAttemptFull')
-    const purposeAttempt = document.getElementById('purposeAttempt')    
+    const purposeAttempt = document.getElementById('purposeAttempt')
+    const selectTopicText = document.getElementById('selectTopicText')    
 
     const options = document.getElementById("options")
     let shwAnsr = document.getElementById("show")    
 
     for (const a of cardTopic) {        
+        display.style.visibility = 'visible'
+        selectTopicText.style.visibility = 'hidden'
+        currentCard++
+        crdNumHolder.innerHTML = `${currentCard} / ${ttlCards}`
 
         card.innerHTML = ''
         acroAttempt.value = ''
@@ -130,8 +139,6 @@ async function displayCards (cardTopic, selection) {
         purposeAttempt.value = ''
 
         shwAnsr.style.color = 'white'
-        card.style.visibility = "visible"
-        options.style.visibility = "visible"
 
         let answer = a['definition']
         let purpose = a['purpose']
@@ -149,6 +156,8 @@ async function displayCards (cardTopic, selection) {
 
         await waitForNext()
     }
+    display.style.visibility = 'hidden'
+    selectTopicText.style.visibility = 'visible'
 }
 
 
