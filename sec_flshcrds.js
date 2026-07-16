@@ -130,19 +130,25 @@ function updateScores(crctAnswer) {
     scoreOutcomeC.className = 'scoreOutcomeC'
     scoreOutcomeW.className = 'scoreOutcomeW'
     let scrdtls
-    userAnswer = userAnswer.toLowerCase()
+
+    if (userAnswer) {
+        userAnswer = userAnswer.toLowerCase()
+    } else {
+        userAnswer = 'no attempt'
+    }
+
     crctDef = crctDef.toLowerCase()
     if (userAnswer === crctDef) {
         crctAttempt++
-        scrdtls = `\u2714 - ${acronym} - Your Answer--> ${userAnswer}`
+        scrdtls = `\u2714 - ${acronym} --- Your Answer--> ${userAnswer}`
         scoreOutcomeC.textContent = scrdtls
         dtlsHolder.appendChild(scoreOutcomeC)
     } else {
-        scrdtls = `\u2718 - ${acronym} - Your Answer--> ${userAnswer}\nCorrect Answer--> ${crctDef}`
+        scrdtls = `\u2718 - ${acronym} ---Your Answer--> ${userAnswer}\nCorrect Answer--> ${crctDef}`
         scoreOutcomeW.textContent = scrdtls
         dtlsHolder.appendChild(scoreOutcomeW)
     }
-    scrHolder.innerHTML = `${crctAttempt} / ${attempts}`
+    scrHolder.textContent = `${crctAttempt} / ${attempts}`
 }
 
 // displays correct cards and sets functionality to them
@@ -187,7 +193,6 @@ async function displayCards (cardTopic, selection) {
         acronym.className = "acronyms"
         acronym.textContent = a["acronym"]
         card.appendChild(acronym)
-        console.log(userAnswer)
         shwAnsr.onclick = () => {
             showAnswer(answer, purpose)
             shwAnsr.style.color = 'gray'
