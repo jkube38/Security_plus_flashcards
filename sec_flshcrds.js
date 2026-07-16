@@ -133,6 +133,7 @@ function updateScores(crctAnswer) {
 
     if (userAnswer) {
         userAnswer = userAnswer.toLowerCase()
+        userAnswer = userAnswer.trim()
     } else {
         userAnswer = 'no attempt'
     }
